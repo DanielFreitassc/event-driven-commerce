@@ -1,7 +1,7 @@
 package com.danielfreitassc.inventory.dtos;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public record ProductResponseDto(
@@ -10,8 +10,8 @@ public record ProductResponseDto(
     String name,
     String description,
     BigDecimal price,
-    Timestamp createdAt,
-    Timestamp updatedAt
+    LocalDateTime createdAt,
+    LocalDateTime updatedAt
 ) {
     
 }

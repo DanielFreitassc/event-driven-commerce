@@ -42,8 +42,7 @@ public class ProductService {
     }
 
     public void deleteById(UUID id) {
-        ProductEntity productEntity = findProductOrThrow(id);
-        productRepository.delete(productEntity);
+        productRepository.delete(findProductOrThrow(id));
     }
 
     @Transactional
@@ -51,8 +50,6 @@ public class ProductService {
         ProductEntity productEntity = findProductOrThrow(id);
 
         productMapper.updateEntity(productRequestDto, productEntity);
-
-        productRepository.save(productEntity);
 
         return productMapper.entityToDto(productEntity);
     }
